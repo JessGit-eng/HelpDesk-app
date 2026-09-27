@@ -1,0 +1,245 @@
+/*----COLOURS----*/
+
+:root {
+  --app-bg: #FAFAFC;
+  --sidebar-bg: #E5EAF5;
+
+  --primary-purple: #BC99FF;
+  --light-purple: #D8C8FF;
+  --dark-purple: #54149C;
+
+  --table-stripe: #F2F4FA;
+
+  --text-main: #222;
+  --text-secondary: #555;
+  --text-muted: #666;
+
+  --white: #FFFFFF;
+}
+
+/*----FONTS---*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+/* ----------- APP ----------- */
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--app-bg);
+}
+
+/* ----------- SIDEBAR SECTION ----------- */
+
+.sidebar {
+  width: 140px;
+  flex-shrink: 0;
+  background-color: var(--sidebar-bg);
+  padding: 50px 50px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 45px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.brand h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar img {
+    text-align: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--primary-purple);
+}
+
+/* ----------- NEW TICKET PAGE ----------- */
+
+.main-content {
+    flex: 1;
+     display: flex;
+    flex-direction: column;
+}
+
+.new-ticket-section {
+    width: 100%;
+    max-width: 760px;
+    margin: 20px auto;
+}
+
+.new-ticket-section h2 {
+    margin: 0 0 40px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+/* Form layout */
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* Labels */
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+
+/* Text input + textarea */
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+
+    border: 1px solid #D8C8FF;
+    border-radius: 6px;
+
+    background-color: white;
+}
+
+
+/* Description box */
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* Category dropdown */
+
+.form-group select {
+    width: 180px;
+}
+
+
+/* File upload */
+
+.form-group input[type="file"] {
+    padding: 10px;
+
+    border: 1px solid #D8C8FF;
+    border-radius: 6px;
+
+    background-color: white;
+
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* Submit button */
+
+.submit-ticket-button {
+    align-self: center;
+
+    padding: 12px 20px;
+
+    background-color: var(--button-bg);
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.submit-ticket-button:hover {
+    background-color: #A977F5;
+}
+
+/* - FOOTER - */
+
+.footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

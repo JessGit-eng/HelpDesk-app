@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+dist/
+
+# VS Code
+.vscode/
+
+# Local databases
+*.db
+
+# AI models
+*.gguf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables / secrets
+.env
+.env.*

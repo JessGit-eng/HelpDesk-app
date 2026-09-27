@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python-multipart
+llama-cpp-python
+playwright
+pytest
+httpx

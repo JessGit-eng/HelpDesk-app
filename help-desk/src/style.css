@@ -1,0 +1,295 @@
+/*----COLOURS----*/
+
+:root {
+  --app-bg: #FAFAFC;
+  --sidebar-bg: #E5EAF5;
+
+  --primary-purple: #BC99FF;
+  --light-purple: #D8C8FF;
+  --dark-purple: #54149C;
+
+  --table-stripe: #F2F4FA;
+
+  --text-main: #222;
+  --text-secondary: #555;
+  --text-muted: #666;
+
+  --white: #FFFFFF;
+}
+
+/*----FONTS---*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+/* ----------- APP ----------- */
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--app-bg);
+}
+
+
+
+/* ----------- SIDEBAR SECTION ----------- */
+
+.sidebar {
+  width: 140px;
+  background-color: var(--sidebar-bg);
+  padding: 50px 50px;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-logo {
+    width: 45px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.brand h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.sidebar img {
+    text-align: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 100px;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 16px;
+    background-color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color:  var(--primary-purple);
+}
+
+/* - Part 1 - */
+
+.ticket-heading h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+.ticket-heading p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.summary-cards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background-color: var(--primary-purple);
+    padding: 10px 18px;
+    min-width: 110px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+}
+
+.summary-card strong {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+.summary-card span {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* - Part 2 - */
+
+.ticket-search {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form input {
+    width: 300px;
+    padding: 12px 16px;
+
+    border: 1px solid var(--sidebar-bg);
+    border-right: none;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.search-button {
+    padding: 12px 20px;
+
+    border: 1px solid var(--sidebar-bg);
+    background-color: var(--sidebar-bg);
+
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+/* - Part 3 Table section */
+
+.ticket-list {
+    flex: 1;
+    width: 100%;
+}
+
+.tickets-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse; /*prevents each table cell from having separate gaps/borders*/
+    font-size: 14px;
+}
+
+.tickets-table thead {
+    background-color: var(--white);
+}
+
+.tickets-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 500;
+    border-top: 1px solid var(--light-purple);
+    border-bottom: 1px solid var(--light-purple);
+}
+
+.tickets-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--light-purple);
+}
+
+.status-select {
+    padding: 6px 8px;
+    border: 1px solid var(--light-purple);
+    border-radius: 4px;
+    background-color: var(--white);
+    color: var(--text-main);
+    font: inherit;
+}
+
+.tickets-table tbody tr:nth-child(odd) {
+    background-color: var(--table-stripe);
+}
+
+.tickets-table tbody tr:nth-child(even) {
+    background-color: var(--white);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+    margin-top: 30px;
+}
+
+.pagination a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.pagination a:hover {
+    color: var(--dark-purple);
+}
+
+.pagination span {
+    color: var(--text-muted);
+}
+
+/* - Part 4 - */
+
+.footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+
+/* ----------- MAIN SECTION OUTER LAYER----------- */
+
+.main-content {
+    flex: 1;
+    padding: 80px 60px 40px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-overview {
+    margin-bottom: 70px;
+    gap: 12px;
+}
+
+.ticket-search {
+    margin-bottom: 40px;
+}
+
+.ticket-list {
+    flex: 1;
+}
+
+.main-footer {
+    margin-top: 60px;
+    text-align: center;
+}

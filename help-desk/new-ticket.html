@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>help-desk</title>
+    <link rel="stylesheet" href="./src/new-ticket.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-layout">
+        <aside class="sidebar">
+          <header class="brand">
+            <h1>Help Desk</h1>
+          </header>
+          <nav class="navigation">
+            <a class="nav-link" href="index.html">Tickets</a>
+            <a class="nav-link" href="new-ticket.html">New Ticket</a>
+          </nav>
+        </aside>
+        <main class="main-content">
+          <section class="new-ticket-section">
+            <h2>Submit a new support request</h2>
+
+            <form class="ticket-form" enctype="multipart/form-data">
+              <!-- Title -->
+              <div class="form-group">
+                <label for="ticket-title">Title</label>
+                <input
+                  type="text"
+                  id="ticket-title"
+                  name="title"
+                  placeholder="e.g. unable to login"
+                  required
+                />
+              </div>
+
+              <!-- Description -->
+              <div class="form-group">
+                <label for="ticket-description">Description</label>
+                <textarea
+                  id="ticket-description"
+                  name="description"
+                  rows="6"
+                  placeholder="Describe the issue, what happened and any error message."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Category -->
+              <div class="form-group">
+                <label for="ticket-category">Category</label>
+                <select id="ticket-category" name="category" required>
+                  <option value="">Select a category</option>
+                  <option value="account">Account Access</option>
+                  <option value="hardware">Hardware</option>
+                  <option value="software">Software</option>
+                  <option value="network">Network</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Attachment -->
+              <div class="form-group">
+                <label for="ticket-attachment">Attachment</label>
+                <input
+                  type="file"
+                  id="ticket-attachment"
+                  name="attachment"
+                  accept="image/*"
+                />
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="submit-ticket-button">
+                Submit Ticket
+              </button>
+            </form>
+          </section>
+          <footer class="footer">
+            <p>
+              &copy; 2026 NovaTech Solutions |
+              <a href="#">Help &amp; Support</a> | <a href="#">Privacy</a> |
+              <span>v1.0</span>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

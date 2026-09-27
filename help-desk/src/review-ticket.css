@@ -1,0 +1,117 @@
+/*----COLOURS----*/
+
+:root {
+  --app-bg: #FAFAFC;
+  --sidebar-bg: #E5EAF5;
+
+  --primary-purple: #BC99FF;
+  --light-purple: #D8C8FF;
+  --dark-purple: #54149C;
+
+  --table-stripe: #F2F4FA;
+
+  --text-main: #222;
+  --text-secondary: #555;
+  --text-muted: #666;
+
+  --white: #FFFFFF;
+}
+
+/*----FONTS---*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./assets/fonts/Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.ticket-review {
+    width: 100%;
+    max-width: 760px;
+
+    margin: 60px auto 0;
+}
+
+.ticket-review h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.ticket-card {
+    padding: 24px;
+
+    border: 1px solid #D8C8FF;
+    border-radius: 8px;
+
+    background-color: white;
+}
+
+.ticket-details {
+    margin-bottom: 32px;
+}
+
+#ticket-attachment-container a {
+    color: var(--dark-purple);
+    font-weight: 500;
+}
+
+.ai-recommendation {
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.ai-recommendation h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+
+.review-actions {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    margin-top: 32px;
+}
+
+.review-actions button,
+.review-actions a {
+    padding: 12px 24px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: var(--button-bg);
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    color: inherit;
+    text-decoration: none;
+}
+
+.review-actions button:hover,
+.review-actions a:hover {
+    background-color: #A977F5;
+}

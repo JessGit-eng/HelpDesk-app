@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>help-desk</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-layout">
+        <aside class="sidebar">
+          <header class="brand">
+            <img src="./src/assets/Headphones.svg" alt="" class="brand-logo" />
+            <h1>Help Desk</h1>
+          </header>
+          <nav class="navigation">
+            <a class="nav-link" href="index.html">Tickets</a>
+            <a class="nav-link" href="new-ticket.html">New Ticket</a>
+          </nav>
+        </aside>
+        <main class="main-content">
+          <!-- Part 1 -->
+          <section class="ticket-overview">
+            <h2>Tickets</h2>
+            <p>Manage and track support requests</p>
+            <div class="summary-cards">
+              <div class="summary-card">
+                <strong id="open-count">0</strong>
+                <span>Open</span>
+              </div>
+              <div class="summary-card">
+                <strong id="progress-count">0</strong>
+                <span>In Progress</span>
+              </div>
+              <div class="summary-card">
+                <strong id="priority-count">0</strong>
+                <span>High Priority</span>
+              </div>
+              <div class="summary-card">
+                <strong id="resolved-count">0</strong>
+                <span>Resolved</span>
+              </div>
+            </div>
+          </section>
+          <!-- Part 2 -->
+          <section class="ticket-search">
+            <form class="search-form">
+              <input
+                type="search"
+                id="ticket-search"
+                name="ticket-search"
+                placeholder="Search ticket ID"
+              />
+              <button type="submit" class="search-button">Search</button>
+            </form>
+          </section>
+          <!-- Part 3 -->
+          <section class="ticket-list">
+            <table class="tickets-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Date Created</th>
+                  <th>Priority</th>
+                  <th>Team</th>
+                  <th>Status</th>
+                  <th>Date Resolved</th>
+                </tr>
+              </thead>
+              <tbody id="tickets-body"></tbody>
+            </table>
+            <!-- Pagination -->
+            <nav class="pagination" aria-label="Ticket pages">
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <span>...</span>
+              <a href="#" aria-label="Next page">▶</a>
+            </nav>
+          </section>
+          <!-- Part 4 -->
+          <footer class="footer">
+            <p>
+              &copy; 2026 NovaTech Solutions |
+              <a href="#">Help &amp; Support</a> | <a href="#">Privacy</a> |
+              <span>v1.0</span>
+            </p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="tickets.js"></script>
+  </body>
+</html>
