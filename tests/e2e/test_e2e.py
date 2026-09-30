@@ -117,9 +117,16 @@ def test_ticket_created():
             "network"
         )
 
-        page.click(
-            "button[type='submit']"
-        )
+        with page.expect_response(
+            lambda response: (
+                response.request.method == "POST"
+                and response.url.endswith("/tickets")
+            )
+        ) as response_info:
+            page.click("button[type='submit']")
+
+        response = response_info.value
+        assert response.status == 200
 
         page.wait_for_url("**/index.html")
 

@@ -1,5 +1,6 @@
 const configuredApiBaseUrl = import.meta.env?.VITE_API_BASE_URL;
-const API_BASE_URL = import.meta.env.DEV
+const isDevelopment = import.meta.env?.DEV ?? false;
+const API_BASE_URL = isDevelopment
     ? ""
     : configuredApiBaseUrl === "same-origin"
         ? ""
