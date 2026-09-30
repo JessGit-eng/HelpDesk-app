@@ -1,0 +1,37 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    environment:
+      HELPDESK_DB_PATH: /app/data/helpdesk.db
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    volumes:
+      - helpdesk-data:/app/data
+      - helpdesk-attachments:/app/attachments
+      - ./AI-model:/app/AI-model:ro
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/tickets', timeout=5)"
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 3m
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+
+volumes:
+  helpdesk-data:
+  helpdesk-attachments:

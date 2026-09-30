@@ -8,3 +8,7 @@ __pycache__
 .gitignore
 .env
 *.log
+*.db
+*.gguf
+attachments
+frontend/dist

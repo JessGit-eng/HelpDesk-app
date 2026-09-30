@@ -1,7 +1,4 @@
-fastapi
-uvicorn
-python-multipart
-llama-cpp-python
+-r backend/requirements.txt
 playwright
 pytest
 httpx

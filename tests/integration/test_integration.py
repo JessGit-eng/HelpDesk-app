@@ -1,4 +1,5 @@
 from fastapi.testclient import TestClient
+from backend import main as backend_main
 from main import app
 
 client = TestClient(app)
@@ -26,7 +27,17 @@ def test_get_tickets():
     assert response.status_code == 200
     assert isinstance(response.json(), list)
 
-def test_ai_triage_response():
+def test_ai_triage_response(monkeypatch):
+    monkeypatch.setattr(
+        backend_main,
+        "triage_ticket",
+        lambda *_: (
+            "Priority: High\n"
+            "Confidence: 90%\n"
+            "Reason: The test AI recommendation."
+        ),
+    )
+
     ticket = {
         "title": "VPN Issue",
         "description": "Cannot connect to VPN from home",
